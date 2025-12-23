@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "school": "Střední průmyslová škola elektrotechniky a informatiky, Frenštát pod Radhoštěm",
+    "image": "images/schools/frengpfoto.jpg",
+    "alt": "Frengp",
+    "years": "2016 - 2020",
+    "description": "This high school laid the groundwork for my technical education, with a strong focus on programming, electrical engineering, and IT fundamentals. I studied subjects like computer networking, operating systems, and database management while developing practical skills in programming languages such as C++, Java, and Python. The school provided hands-on experience with hardware and software, allowing me to build and troubleshoot computer systems. During my time here, I also participated in national competitions related to programming and IT security, further enhancing my problem-solving abilities. My experience at this school played a crucial role in shaping my passion for technology and programming."
+  },
+  {
+    "id": 2,
+    "school": "University of Ostrava",
+    "image": "images/schools/osufoto.jpg",
+    "alt": "Osu",
+    "years": "2020 - 2024",
+    "description": "The University of Ostrava provided a solid foundation in Computer Science, focusing on software development, algorithms, and data structures. Throughout my studies, I participated in various academic projects, hackathons, and research initiatives. I also worked with different programming languages, including JavaScript, Python, and Java, to develop real-world applications. The university offered a great environment for learning, collaboration, and personal growth, with professors encouraging independent thinking and innovation. Additionally, I was involved in extracurricular activities, such as the Erasmus Student Network (ESN), where I had the chance to connect with international students and develop cross-cultural communication skills."
+  },
+
+  {
+    "id": 3,
+    "school": "L'Aquila University",
+    "image": "images/schools/univaqfoto.jpg",
+    "alt": "Univaq",
+    "years": "2024 - 2025",
+    "description": "As part of my Erasmus exchange program, I had the opportunity to study at L'Aquila University, a well-respected institution known for its engineering and computer science programs. Here, I expanded my knowledge of advanced programming concepts, artificial intelligence, and cloud computing. The university's international environment provided a unique learning experience, allowing me to work alongside students from different backgrounds and gain insight into global technological trends. I was also involved in collaborative projects that required teamwork, creativity, and innovative thinking. Studying at L'Aquila University has been an enriching experience, helping me grow academically and personally while building valuable connections with students and professionals worldwide."
+  }
+]
