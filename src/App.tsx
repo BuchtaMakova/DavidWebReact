@@ -3,6 +3,10 @@ import "./App.css";
 import SchoolDetail from "./components/schoolDetail/SchoolDetail";
 import Timeline from "./components/timeline/Timeline";
 
+import ProjectCard from "./components/projectCard/ProjectCard";
+import film from "@/assets/images/film.png";
+import Film from "./components/film/film";
+
 function App() {
   const [activeSchool, setActiveSchool] = useState<number>(1);
 
@@ -81,6 +85,15 @@ function App() {
           </div>
         </div>
         <div className="absolute w-[600px] h-[600px] bg-primary rounded-full right-[65%] bottom-100 transform translate-x-[50%] translate-y-[50%] z-[-1] blur-[100px] opacity-50" />
+      </section>
+
+      <section
+        id="work"
+        className="relative h-screen overflow-hidden flex items-center justify-center"
+      >
+        <div className="relative h-1/2 w-full max-w-6xl mx-auto px-6 lg:px-10">
+          <Film />
+        </div>
       </section>
     </main>
   );
