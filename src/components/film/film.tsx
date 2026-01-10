@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import filmroll from "@/assets/images/filmRoll.png";
 import film from "@/assets/images/film1.png";
 import filmend from "../../assets/images/filmend1.png";
@@ -10,15 +10,20 @@ const Film = () => {
   const filmRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const getMaxTranslate = () => {
+    if (!filmRef.current) return 0;
+    return filmRef.current.offsetWidth;
+  };
+
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [translateX, setTranslateX] = useState(0);
   const [startTranslate, setStartTranslate] = useState(0);
 
-  const getMaxTranslate = () => {
-    if (!filmRef.current) return 0;
-    return filmRef.current.offsetWidth;
-  };
+  useLayoutEffect(() => {
+    const max = getMaxTranslate();
+    setTranslateX(-max);
+  }, []);
 
   const onMouseDown = (e: React.MouseEvent) => {
     setIsDragging(true);
@@ -45,11 +50,11 @@ const Film = () => {
   return (
     <div className="w-full h-full flex items-center justify-center relative z-20">
       {/* Film Roll */}
-      <div className="h-full select-none pointer-events-none">
+      <div className="h-full select-none pointer-events-none flex-shrink-0">
         <img
           src={filmroll}
           alt="Film Cartridge"
-          className="h-full object-contain"
+          className="h-full object-contain -translate-y-[4%]"
           draggable={false}
         />
       </div>
@@ -57,7 +62,9 @@ const Film = () => {
       {/* Film Strip */}
       <div
         ref={containerRef}
-        className="h-3/5 overflow-hidden cursor-grab film"
+        className={`h-[77%] overflow-hidden film ${
+          isDragging ? "cursor-grabbing" : "cursor-grab"
+        }`}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
@@ -65,19 +72,34 @@ const Film = () => {
       >
         <div
           ref={filmRef}
-          className="inline-flex flex-nowrap items-center space-x-12 px-10 h-full"
+          className="inline-flex items-center h-full"
           style={{
             transform: `translateX(${translateX}px)`,
-            backgroundImage: `url(${film})`,
-            backgroundRepeat: "repeat-x",
-            backgroundSize: "contain",
           }}
         >
-          {projects.map((project, index) => (
-            <div key={index} className="h-3/4">
-              <ProjectCard image={project.image} name={project.name} />
-            </div>
-          ))}
+          {/* Film background + projects */}
+          <div
+            className="flex h-full space-x-9 px-9 items-center"
+            style={{
+              backgroundImage: `url(${film})`,
+              backgroundRepeat: "repeat-x",
+              backgroundSize: "contain",
+            }}
+          >
+            {projects.map((project, index) => (
+              <div key={index} className="h-[65%]">
+                <ProjectCard image={project.image} name={project.name} />
+              </div>
+            ))}
+          </div>
+
+          {/* Film end */}
+          <img
+            src={filmend}
+            alt="Film End"
+            className="h-full object-contain select-none pointer-events-none"
+            draggable={false}
+          />
         </div>
       </div>
     </div>
