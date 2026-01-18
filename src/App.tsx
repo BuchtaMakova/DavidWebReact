@@ -2,9 +2,6 @@ import { useState } from "react";
 import "./App.css";
 import SchoolDetail from "./components/schoolDetail/SchoolDetail";
 import Timeline from "./components/timeline/Timeline";
-
-import ProjectCard from "./components/projectCard/ProjectCard";
-import film from "@/assets/images/film.png";
 import Film from "./components/film/film";
 
 function App() {
@@ -14,7 +11,7 @@ function App() {
     setActiveSchool(schoolId);
   };
   return (
-    <main className="min-h-screen bg-background text-secondary overflow-hidden">
+    <main className="main min-h-screen bg-background text-secondary overflow-hidden">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-30">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between text-sm tracking-widest">

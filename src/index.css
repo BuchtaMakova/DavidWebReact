@@ -33,14 +33,15 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-.projects {
-  background-image: url("/src/assets/images/film.png");
-  background-repeat: repeat-x; /* ⬅ repeat vertically */
-  background-position: center top;
+html {
+  scrollbar-width: none;
 }
 
-.project-section {
-  background-attachment: fixed;
+body::-webkit-scrollbar {
+  display: none;
 }

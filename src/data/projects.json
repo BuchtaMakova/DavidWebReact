@@ -1,18 +1,29 @@
 [
   {
     "id": 1,
-    "name": "PriborApp",
-    "image": "images/projects/phone.png"
+    "name": "G4G",
+    "image": "images/projects/phone.png",
+    "description": "G4G is a web forum designed for gamers to discuss various topics related to gaming. The website offers a platform for gamers to connect, share their experiences, and seek advice from fellow gamers. The forum is organized into different categories based on game genres, platforms, and specific games. Users can create accounts, post topics, reply to threads, and engage in discussions with other members of the community."
   },
+
   {
     "id": 2,
-    "name": "G4G",
-    "image": "images/projects/phone.png"
+    "name": "PriborApp",
+    "image": "images/projects/phone.png",
+    "description": "PriborApp is a mobile application designed specifically for the town called Pribor as a part of my bachelor's thesis. The app is used to guide tourists around the town and to teach them about important places and their history. The app features an interactive map which contains of places of interest and historical photos. Places of interest are the most known and interesting places in Pribor which might interest the tourist. The historical photos on the other hand are placed on the map by the users themselves. The photos must be placed on the map at the exact location where they were taken so it has a lovely effect of seeing how the town looked like in the past compared to how it looks like now."
   },
 
   {
     "id": 3,
     "name": "DavidWeb",
-    "image": "images/projects/phone.png"
+    "image": "images/projects/phone.png",
+    "description": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer. It features a clean and modern design with smooth animations and transitions. The website is fully responsive and optimized for performance, ensuring a seamless user experience across different devices and screen sizes."
+  },
+
+  {
+    "id": 4,
+    "name": "Kara",
+    "image": "images/projects/phone.png",
+    "description": "Kara is a website made for my friends birthday. It features series of funny photos, inside jokes and small pranks. The website is designed to be light-hearted and entertaining, with a focus on humor and fun. It includes a set of rewards hidden behind a security question that only the birthday person would know."
   }
 ]
