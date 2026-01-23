@@ -15,3 +15,9 @@
 .card:hover {
   filter: invert(0);
 }
+
+.modal-image {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}

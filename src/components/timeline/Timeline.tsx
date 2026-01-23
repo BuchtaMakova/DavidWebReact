@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Timeline.css";
-import highschool from "@/assets/images/frengplogo.png";
-import college from "@/assets/images/osulogo.png";
-import erasmus from "@/assets/images/univaqlogo2.png";
+import highschool from "@/assets/images/logos/frengplogo.png";
+import college from "@/assets/images/logos/osulogo.png";
+import erasmus from "@/assets/images/logos/univaqlogo2.png";
 
 interface Props {
   updateSchool: (schoolState: number) => void;

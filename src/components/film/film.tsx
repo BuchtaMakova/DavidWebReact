@@ -1,17 +1,19 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import filmroll from "@/assets/images/filmRoll4.png";
-import film from "@/assets/images/film2.png";
-import filmend from "../../assets/images/filmend1.png";
+import filmroll from "@/assets/images/film/filmRoll4.png";
+import film from "@/assets/images/film/film2.png";
+import filmend from "../../assets/images/film/filmend1.png";
 import projects from "../../data/projects.json";
 import ProjectCard from "../projectCard/ProjectCard";
 import "./film.css";
 import Modal from "../modal/Modal";
+import closeIcon from "@/assets/icons/close.svg";
 
 const DRAG_THRESHOLD = 5; // pixels
 
 type Project = {
   name: string;
-  image: string;
+  images: string[];
+  thumbnail: string;
   description: string;
 };
 
@@ -118,7 +120,7 @@ const Film = () => {
                   setSelectedProject(project);
                 }}
               >
-                <ProjectCard image={project.image} name={project.name} />
+                <ProjectCard image={project.thumbnail} name={project.name} />
               </div>
             ))}
           </div>
@@ -136,18 +138,37 @@ const Film = () => {
       {/* Modal */}
       {selectedProject !== null && (
         <Modal
-          width="w-3/4" // 75% width
+          width="w-3/4"
           height="h-3/4"
           onClose={() => setSelectedProject(null)}
           isOpen={true}
         >
-          <div className="flex flex-row">
-            <div className="flex-2">leve</div>
-            <div className="flex-1">
-              <div>
-                <b>{selectedProject.name}</b>
-              </div>
-              <div>{selectedProject.description}</div>
+          <div className="relative flex h-full overflow-hidden">
+            {/* Images */}
+            <div className="flex-2 pt-6 px-6 overflow-y-auto">
+              {selectedProject.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`${selectedProject.name} ${index + 1}`}
+                  className="mb-6 w-full modal-image"
+                  draggable={false}
+                />
+              ))}
+            </div>
+
+            {/* Info */}
+
+            <div className="flex-1 p-6 overflow-y-auto relative">
+              <button
+                className="absolute top-0 right-0 cursor-pointer z-20"
+                onClick={() => setSelectedProject(null)}
+              >
+                <img src={closeIcon} alt="Close" className="w-8 h-8" />
+              </button>
+
+              <b className="block mb-2 text-lg">{selectedProject.name}</b>
+              <p className="text-sm">{selectedProject.description}</p>
             </div>
           </div>
         </Modal>

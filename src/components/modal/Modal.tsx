@@ -49,13 +49,11 @@ const Modal = ({
       <div className="absolute inset-0 bg-black/60" onClick={onClose} />
 
       {/* Modal content */}
-      <div
-        className={`relative z-10 ${width} ${height} bg-white p-6 shadow-xl`}
-      >
+      <div className={`relative z-10 ${width} ${height} bg-white shadow-xl`}>
         {children}
       </div>
     </div>,
-    document.body
+    document.body,
   );
 };
 
