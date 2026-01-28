@@ -7,3 +7,7 @@
 .main::-webkit-scrollbar {
   display: none;
 }
+
+nav a:hover {
+  color: var(--accent);
+}

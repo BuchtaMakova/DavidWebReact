@@ -26,6 +26,9 @@ const Film = () => {
   const [startTranslate, setStartTranslate] = useState(0);
   const [didMove, setDidMove] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [hasInteracted, setHasInteracted] = useState(false);
+
+  const isPortrait = (filename: string) => filename.endsWith("p.jpg");
 
   const getMaxTranslate = () => {
     if (!filmRef.current) return 0;
@@ -42,6 +45,7 @@ const Film = () => {
     setStartX(e.clientX);
     setStartTranslate(translateX);
     setDidMove(false);
+    if (!hasInteracted) setHasInteracted(true);
   };
 
   const onMouseMove = (e: React.MouseEvent) => {
@@ -89,7 +93,7 @@ const Film = () => {
         ref={containerRef}
         className={`h-[77%] overflow-hidden film ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
-        }`}
+        } ${!hasInteracted ? "film-wiggle" : ""}`} // animation only if not clicked yet
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
@@ -143,23 +147,28 @@ const Film = () => {
           onClose={() => setSelectedProject(null)}
           isOpen={true}
         >
-          <div className="relative flex h-full overflow-hidden">
+          <div className="relative grid h-full grid-cols-[2fr_1fr] overflow-hidden">
             {/* Images */}
-            <div className="flex-2 pt-6 px-6 overflow-y-auto">
+            <div
+              className={`grid gap-6 overflow-y-auto p-6 ${
+                selectedProject.images.every((img) => isPortrait(img))
+                  ? "grid-cols-3"
+                  : "grid-cols-1"
+              }`}
+            >
               {selectedProject.images.map((image, index) => (
                 <img
                   key={index}
                   src={image}
                   alt={`${selectedProject.name} ${index + 1}`}
-                  className="mb-6 w-full modal-image"
+                  className="w-full modal-image mb-6"
                   draggable={false}
                 />
               ))}
             </div>
 
             {/* Info */}
-
-            <div className="flex-1 p-6 overflow-y-auto relative">
+            <div className="p-6 overflow-y-auto relative">
               <button
                 className="absolute top-0 right-0 cursor-pointer z-20"
                 onClick={() => setSelectedProject(null)}

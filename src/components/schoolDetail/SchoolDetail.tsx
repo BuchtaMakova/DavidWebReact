@@ -19,7 +19,7 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
       requestAnimationFrame(() => {
         if (scrollRef.current) {
           setIsScrollable(
-            scrollRef.current.scrollHeight > scrollRef.current.clientHeight
+            scrollRef.current.scrollHeight > scrollRef.current.clientHeight,
           );
         }
       });
@@ -78,7 +78,7 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
   };
 
   return (
-    <div className="school-container min-w-[500px] px-10 pt-10 text-text-dark relative">
+    <div className="school-container min-w-[500px] px-10 pt-10 text-textdark relative">
       <div
         ref={scrollRef}
         className="flex flex-col gap-3 overflow-auto content max-h-full scrollbar-hide pb-10"

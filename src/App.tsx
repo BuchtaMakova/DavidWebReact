@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import SchoolDetail from "./components/schoolDetail/SchoolDetail";
 import Timeline from "./components/timeline/Timeline";
-import Film from "./components/film/film";
+import Film from "./components/film/Film";
 
 function App() {
   const [activeSchool, setActiveSchool] = useState<number>(1);
@@ -11,26 +11,21 @@ function App() {
     setActiveSchool(schoolId);
   };
   return (
-    <main className="main min-h-screen bg-background text-secondary overflow-hidden">
+    <main className="main min-h-screen bg-background text-textlight overflow-hidden">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-30">
         <div className="max-w-6xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between text-sm tracking-widest">
           <div className="font-semibold">
-            <b>DAVID</b>WEB
+            <label>DAVID</label>
+            <label className="text-accent">
+              <b>WEB</b>
+            </label>
           </div>
           <nav className="space-x-8">
-            <a className="hover:opacity-70" href="#about">
-              ABOUT
-            </a>
-            <a className="hover:opacity-70" href="#gallery">
-              GALLERY
-            </a>
-            <a className="hover:opacity-70" href="#work">
-              WORK
-            </a>
-            <a className="hover:opacity-70" href="#contact">
-              CONTACT
-            </a>
+            <a href="#about">ABOUT</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="#work">WORK</a>
+            <a href="#contact">CONTACT</a>
           </nav>
         </div>
       </header>
@@ -41,9 +36,9 @@ function App() {
         <div className="relative w-full max-w-6xl mx-auto px-6 lg:px-10">
           <div className="relative w-full">
             {/* Image */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] aspect-[3/2] z-0">
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] aspect-[3/2] z-1">
               <img
-                src="/profile.jpg"
+                src="images/profile.jpg"
                 alt="Portrait"
                 className="object-cover grayscale w-full h-full"
               />

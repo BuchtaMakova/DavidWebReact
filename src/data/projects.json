@@ -2,12 +2,14 @@
   {
     "id": 1,
     "name": "G4G",
-    "thumbnail": "images/projects/phone.png",
+    "thumbnail": "src/assets/images/projects/g4g/thumbnail/g4gThumbnail.png",
     "images": [
-      "images/projects/g4g/g4g1.jpg",
-      "images/projects/g4g/g4g2.jpg",
-      "images/projects/g4g/g4g3.jpg",
-      "images/projects/g4g/g4g4.jpg"
+      "src/assets/images/projects/g4g/screenshots/g4g1l.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g2l.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g3l.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g4l.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g5l.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g6l.jpg"
     ],
     "description": "G4G is a web forum designed for gamers to discuss various topics related to gaming. The website offers a platform for gamers to connect, share their experiences, and seek advice from fellow gamers. The forum is organized into different categories based on game genres, platforms, and specific games. Users can create accounts, post topics, reply to threads, and engage in discussions with other members of the community."
   },
@@ -15,12 +17,20 @@
   {
     "id": 2,
     "name": "PriborApp",
-    "thumbnail": "images/projects/phone.png",
+    "thumbnail": "src/assets/images/projects/priborapp/thumbnail/priborAppThumbnail.png",
     "images": [
-      "images/projects/priborapp/priborapp1.jpg",
-      "images/projects/priborapp/priborapp2.jpg",
-      "images/projects/priborapp/priborapp3.jpg",
-      "images/projects/priborapp/priborapp4.jpg"
+      "src/assets/images/projects/priborapp/screenshots/priborapp1p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp2p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp3p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp4p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp5p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp6p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp7p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp8p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp9p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp10p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp11p.jpg",
+      "src/assets/images/projects/priborapp/screenshots/priborapp12p.jpg"
     ],
     "description": "PriborApp is a mobile application designed specifically for the town called Pribor as a part of my bachelor's thesis. The app is used to guide tourists around the town and to teach them about important places and their history. The app features an interactive map which contains of places of interest and historical photos. Places of interest are the most known and interesting places in Pribor which might interest the tourist. The historical photos on the other hand are placed on the map by the users themselves. The photos must be placed on the map at the exact location where they were taken so it has a lovely effect of seeing how the town looked like in the past compared to how it looks like now."
   },
@@ -28,12 +38,12 @@
   {
     "id": 3,
     "name": "DavidWeb",
-    "thumbnail": "images/projects/phone.png",
+    "thumbnail": "src/assets/images/projects/davidweb/thumbnail/davidwebThumbnail.png",
     "images": [
-      "images/projects/davidweb/davidweb1.jpg",
-      "images/projects/davidweb/davidweb2.jpg",
-      "images/projects/davidweb/davidweb3.jpg",
-      "images/projects/davidweb/davidweb4.jpg"
+      "src/assets/images/projects/davidweb/screenshots/davidweb1l.jpg",
+      "src/assets/images/projects/davidweb/screenshots/davidweb2l.jpg",
+      "src/assets/images/projects/davidweb/screenshots/davidweb3l.jpg",
+      "src/assets/images/projects/davidweb/screenshots/davidweb4l.jpg"
     ],
     "description": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer. It features a clean and modern design with smooth animations and transitions. The website is fully responsive and optimized for performance, ensuring a seamless user experience across different devices and screen sizes."
   },
@@ -41,12 +51,13 @@
   {
     "id": 4,
     "name": "Kara",
-    "thumbnail": "images/projects/phone.png",
+    "thumbnail": "src/assets/images/projects/kara/thumbnail/karaThumbnail.png",
     "images": [
-      "images/projects/kara/kara1.jpg",
-      "images/projects/kara/kara2.jpg",
-      "images/projects/kara/kara3.jpg",
-      "images/projects/kara/kara4.jpg"
+      "src/assets/images/projects/kara/screenshots/kara1l.jpg",
+      "src/assets/images/projects/kara/screenshots/kara2l.jpg",
+      "src/assets/images/projects/kara/screenshots/kara3l.jpg",
+      "src/assets/images/projects/kara/screenshots/kara4l.jpg",
+      "src/assets/images/projects/kara/screenshots/kara5l.jpg"
     ],
     "description": "Kara is a website made for my friends birthday. It features series of funny photos, inside jokes and small pranks. The website is designed to be light-hearted and entertaining, with a focus on humor and fun. It includes a set of rewards hidden behind a security question that only the birthday person would know."
   }

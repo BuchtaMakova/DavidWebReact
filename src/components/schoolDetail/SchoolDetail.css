@@ -1,5 +1,6 @@
 .school-container {
   background-color: var(--secondary);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .content::-webkit-scrollbar {

@@ -4,8 +4,8 @@
   --background: #121212;
   --accent: #cb0404;
   --primary: #222222;
-  --secondary: #fff2dd;
-  --textlight: #e5e3d4;
+  --secondary: #dcdcdc;
+  --textlight: #e6e6e6;
   --textdark: #121212;
 }
 
@@ -15,8 +15,8 @@
   --color-accent: var(--accent);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
-  --color-text-light: var(--textlight);
-  --color-text-dark: var(--textdark);
+  --color-textlight: var(--textlight);
+  --color-textdark: var(--textdark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -25,7 +25,8 @@
   :root {
     --background: #121212;
     --accent: #cb0404;
-    --primary: #222222;
+    --primary: #1b1b1b;
+    --secondary: #e5e3d4;
     --textlight: #e5e3d4;
     --textdark: #121212;
   }
