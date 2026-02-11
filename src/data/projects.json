@@ -4,12 +4,12 @@
     "name": "G4G",
     "thumbnail": "src/assets/images/projects/g4g/thumbnail/g4gThumbnail.png",
     "images": [
-      "src/assets/images/projects/g4g/screenshots/g4g1l.jpg",
-      "src/assets/images/projects/g4g/screenshots/g4g2l.jpg",
-      "src/assets/images/projects/g4g/screenshots/g4g3l.jpg",
-      "src/assets/images/projects/g4g/screenshots/g4g4l.jpg",
-      "src/assets/images/projects/g4g/screenshots/g4g5l.jpg",
-      "src/assets/images/projects/g4g/screenshots/g4g6l.jpg"
+      "src/assets/images/projects/g4g/screenshots/g4g1.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g2.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g3.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g4.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g5.jpg",
+      "src/assets/images/projects/g4g/screenshots/g4g6.jpg"
     ],
     "description": "G4G is a web forum designed for gamers to discuss various topics related to gaming. The website offers a platform for gamers to connect, share their experiences, and seek advice from fellow gamers. The forum is organized into different categories based on game genres, platforms, and specific games. Users can create accounts, post topics, reply to threads, and engage in discussions with other members of the community."
   },
@@ -40,10 +40,10 @@
     "name": "DavidWeb",
     "thumbnail": "src/assets/images/projects/davidweb/thumbnail/davidwebThumbnail.png",
     "images": [
-      "src/assets/images/projects/davidweb/screenshots/davidweb1l.jpg",
-      "src/assets/images/projects/davidweb/screenshots/davidweb2l.jpg",
-      "src/assets/images/projects/davidweb/screenshots/davidweb3l.jpg",
-      "src/assets/images/projects/davidweb/screenshots/davidweb4l.jpg"
+      "src/assets/images/projects/davidweb/screenshots/davidweb1.jpg",
+      "src/assets/images/projects/davidweb/screenshots/davidweb2.jpg",
+      "src/assets/images/projects/davidweb/screenshots/davidweb3.jpg",
+      "src/assets/images/projects/davidweb/screenshots/davidweb4.jpg"
     ],
     "description": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer. It features a clean and modern design with smooth animations and transitions. The website is fully responsive and optimized for performance, ensuring a seamless user experience across different devices and screen sizes."
   },
@@ -53,11 +53,11 @@
     "name": "Kara",
     "thumbnail": "src/assets/images/projects/kara/thumbnail/karaThumbnail.png",
     "images": [
-      "src/assets/images/projects/kara/screenshots/kara1l.jpg",
-      "src/assets/images/projects/kara/screenshots/kara2l.jpg",
-      "src/assets/images/projects/kara/screenshots/kara3l.jpg",
-      "src/assets/images/projects/kara/screenshots/kara4l.jpg",
-      "src/assets/images/projects/kara/screenshots/kara5l.jpg"
+      "src/assets/images/projects/kara/screenshots/kara1.jpg",
+      "src/assets/images/projects/kara/screenshots/kara2.jpg",
+      "src/assets/images/projects/kara/screenshots/kara3.jpg",
+      "src/assets/images/projects/kara/screenshots/kara4.jpg",
+      "src/assets/images/projects/kara/screenshots/kara5.jpg"
     ],
     "description": "Kara is a website made for my friends birthday. It features series of funny photos, inside jokes and small pranks. The website is designed to be light-hearted and entertaining, with a focus on humor and fun. It includes a set of rewards hidden behind a security question that only the birthday person would know."
   }

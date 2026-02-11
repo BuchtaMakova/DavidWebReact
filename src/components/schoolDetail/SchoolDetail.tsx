@@ -78,7 +78,7 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
   };
 
   return (
-    <div className="school-container min-w-[500px] px-10 pt-10 text-textdark relative">
+    <div className="bg-[#fefefe] min-w-[500px] px-10 pt-10 text-polaroid-text-primary relative">
       <div
         ref={scrollRef}
         className="flex flex-col gap-3 overflow-auto content max-h-full scrollbar-hide pb-10"
@@ -105,7 +105,7 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
       {!isScrolled && isScrollable && (
         <div
           onClick={scrollDown}
-          className=" rounded-full flex items-center justify-center  w-[65px] h-[65px] dis scroll-button absolute transform -translate-x-1/2 -translate-y-1/2 top-[100%] left-[50%] hover:cursor-pointer"
+          className="bg-accent-500 rounded-full flex items-center justify-center  w-[65px] h-[65px] dis absolute transform -translate-x-1/2 -translate-y-1/2 top-[100%] left-[50%] hover:cursor-pointer"
         >
           <img
             src={arrow}

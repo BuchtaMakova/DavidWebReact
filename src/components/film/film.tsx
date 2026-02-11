@@ -92,7 +92,7 @@ const Film = () => {
       <div
         ref={containerRef}
         className={`h-[77%] overflow-hidden film ${
-          isDragging ? "cursor-grabbing" : "cursor-grab"
+          isDragging ? "dragging cursor-grabbing" : "cursor-grab"
         } ${!hasInteracted ? "film-wiggle" : ""}`} // animation only if not clicked yet
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}

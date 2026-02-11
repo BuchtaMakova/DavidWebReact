@@ -11,13 +11,13 @@ function App() {
     setActiveSchool(schoolId);
   };
   return (
-    <main className="main min-h-screen bg-background text-textlight overflow-hidden">
+    <main className="main min-h-screen text-textlight max-w-5xl mx-auto">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-30">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10 py-6 flex items-center justify-between text-sm tracking-widest">
+        <div className="max-w-5xl mx-auto  py-6 flex items-center justify-between text-sm tracking-widest">
           <div className="font-semibold">
             <label>DAVID</label>
-            <label className="text-accent">
+            <label className="text-accent-500">
               <b>WEB</b>
             </label>
           </div>
@@ -33,7 +33,7 @@ function App() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center">
         {/* Shared container */}
-        <div className="relative w-full max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="relative w-full">
           <div className="relative w-full">
             {/* Image */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] aspect-[3/2] z-1">
@@ -63,27 +63,27 @@ function App() {
           </div>
         </div>
       </section>
+
+      {/* Education */}
       <section
-        className="flex h-screen z-[10] justify-center items-center overflow-hidden"
+        className=" flex flex-col h-screen z-[10] justify-center items-center overflow-hidden"
         id="Education"
       >
-        <div className="flex relative items-center max-w-6xl mx-auto h-3/4 justify-between  px-6 lg:px-10 w-full">
+        <div className="flex relative items-center  mx-auto h-3/4 justify-between w-full">
           <div className="flex h-full w-3/8 items-center">
             <Timeline updateSchool={handleSchoolState} />
           </div>
-
           <div className="flex h-full aspect-square">
             <SchoolDetail schoolId={activeSchool} />
           </div>
         </div>
-        <div className="absolute w-[600px] h-[600px] bg-primary rounded-full right-[65%] bottom-100 transform translate-x-[50%] translate-y-[50%] z-[-1] blur-[100px] opacity-50" />
       </section>
 
       <section
         id="work"
-        className="relative h-screen overflow-hidden flex items-center justify-center"
+        className="relative h-screen  flex items-center justify-center"
       >
-        <div className="relative h-1/2 w-full max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="relative h-1/2 w-full max-w-6xl mx-auto">
           <Film />
         </div>
       </section>
