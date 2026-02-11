@@ -107,11 +107,7 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
           onClick={scrollDown}
           className="bg-accent-500 rounded-full flex items-center justify-center  w-[65px] h-[65px] dis absolute transform -translate-x-1/2 -translate-y-1/2 top-[100%] left-[50%] hover:cursor-pointer"
         >
-          <img
-            src={arrow}
-            alt="fill-white Arrow Icon"
-            className="w-[80%] h-[80%]"
-          />
+          <img src={arrow} alt="Arrow Icon" className="w-[80%] h-[80%]" />
         </div>
       )}
     </div>

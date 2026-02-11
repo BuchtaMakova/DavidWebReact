@@ -3,6 +3,8 @@ import "./App.css";
 import SchoolDetail from "./components/schoolDetail/SchoolDetail";
 import Timeline from "./components/timeline/Timeline";
 import Film from "./components/film/Film";
+import downloadIcon from "@/assets/icons/download.svg";
+import CV from "@/assets/files/David_Urban_en_CV.pdf";
 
 function App() {
   const [activeSchool, setActiveSchool] = useState<number>(1);
@@ -42,6 +44,7 @@ function App() {
                 alt="Portrait"
                 className="object-cover grayscale w-full h-full"
               />
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
             </div>
 
             {/* Content */}
@@ -52,13 +55,36 @@ function App() {
                 I’m David Urban
               </h1>
 
-              <p className="max-w-md leading-relaxed">
+              <p className="max-w-md leading-relaxed text-base">
                 I’m a tech enthusiast and musician who loves programming,
                 playing guitar, and exploring creative projects. When I’m not
                 coding or making music, I’m into gaming, scale modeling, and
                 watches. Currently, I’m in L’Aquila for Erasmus, expanding my
                 horizons. Welcome to my space!
               </p>
+
+              <button
+                onClick={() => {
+                  const link = document.createElement("a");
+                  link.href = CV;
+                  link.download = "David_Urban_en_CV.pdf";
+                  link.click();
+                }}
+                className="text-xs mt-6 px-3 py-2 text-white hover:bg-accent-500 transition relative cursor-pointer flex items-center justify-center gap-1"
+              >
+                <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-accent-500" />
+                <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-accent-500" />
+                <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-accent-500" />
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-accent-500" />
+
+                <span>Download CV</span>
+
+                <img
+                  src={downloadIcon}
+                  alt=""
+                  className="w-[1.5em] h-[1.5em] object-contain"
+                />
+              </button>
             </div>
           </div>
         </div>
