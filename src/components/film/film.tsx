@@ -147,7 +147,7 @@ const Film = () => {
           onClose={() => setSelectedProject(null)}
           isOpen={true}
         >
-          <div className="relative grid h-full grid-cols-[2fr_1fr] overflow-hidden">
+          <div className="relative grid h-full grid-cols-[2fr_1fr] overflow-hidden text-polaroid-text-primary bg-background-polaroid">
             {/* Images */}
             <div
               className={`grid gap-6 overflow-y-auto p-6 ${

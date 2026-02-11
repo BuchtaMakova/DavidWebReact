@@ -78,7 +78,7 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
   };
 
   return (
-    <div className="bg-[#fefefe] min-w-[500px] px-10 pt-10 text-polaroid-text-primary relative">
+    <div className="bg-background-polaroid min-w-[500px] px-10 pt-10 text-polaroid-text-primary relative">
       <div
         ref={scrollRef}
         className="flex flex-col gap-3 overflow-auto content max-h-full scrollbar-hide pb-10"
