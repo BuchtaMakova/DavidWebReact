@@ -1,11 +1,6 @@
-.main {
-  overflow: auto; /* or scroll */
-  scrollbar-width: none; /* Firefox */
+:root {
+  scrollbar-width: none;
   -ms-overflow-style: none;
-}
-
-.main::-webkit-scrollbar {
-  display: none;
 }
 
 nav a:hover {

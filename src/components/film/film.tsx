@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import filmroll from "@/assets/images/film/filmRoll4.png";
+import filmroll from "@/assets/images/film/filmroll5.png";
 import film from "@/assets/images/film/film2.png";
 import filmend from "../../assets/images/film/filmend1.png";
 import projects from "../../data/projects.json";
@@ -77,13 +77,13 @@ const Film = () => {
   };
 
   return (
-    <div className="w-full h-full flex items-center justify-center relative z-20">
+    <div className="w-full h-full flex items-center relative z-20 film-clip">
       {/* Film Roll */}
-      <div className="h-full select-none pointer-events-none flex-shrink-0">
+      <div className="h-full select-none pointer-events-none flex-shrink-0 z-20">
         <img
           src={filmroll}
           alt="Film Cartridge"
-          className="h-full object-contain -translate-y-[5.8%]"
+          className="h-full object-contain -translate-y-[4.5%]"
           draggable={false}
         />
       </div>
@@ -91,9 +91,9 @@ const Film = () => {
       {/* Film Strip */}
       <div
         ref={containerRef}
-        className={`h-[77%] overflow-hidden film ${
+        className={`h-[77%] z-10 film  ${
           isDragging ? "dragging cursor-grabbing" : "cursor-grab"
-        } ${!hasInteracted ? "film-wiggle" : ""}`} // animation only if not clicked yet
+        } ${!hasInteracted ? "film-wiggle" : ""}`}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}

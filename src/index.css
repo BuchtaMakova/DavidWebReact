@@ -10,7 +10,6 @@ body {
   -ms-overflow-style: none;
 }
 
-/* Clean scrollbar removal */
 body::-webkit-scrollbar {
   display: none;
 }

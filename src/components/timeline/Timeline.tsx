@@ -16,7 +16,13 @@ const Timeline = ({ updateSchool }: Props) => {
   const progressHeight = ((activeIndex + 1) / schools.length) * 100;
 
   return (
-    <div className="relative flex flex-col h-full items-center w-full min-w-[290px]">
+    <div className="relative flex flex-col h-full items-center w-full min-w-[290px] ">
+      {/* Corner borders */}
+      <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-neutral-500" />
+      <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-neutral-500" />
+      <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-neutral-500" />
+      <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-neutral-500" />
+
       {/* Base vertical line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] bg-neutral-600" />
 

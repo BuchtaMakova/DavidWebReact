@@ -83,7 +83,7 @@ function App() {
         id="work"
         className="relative h-screen  flex items-center justify-center"
       >
-        <div className="relative h-1/2 w-full max-w-6xl mx-auto">
+        <div className="relative h-1/2 w-full max-w-6xl mx-auto ">
           <Film />
         </div>
       </section>
