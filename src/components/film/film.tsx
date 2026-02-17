@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import filmroll from "@/assets/images/film/filmroll5.png";
 import film from "@/assets/images/film/film2.png";
 import filmend from "../../assets/images/film/filmend1.png";
@@ -36,8 +36,16 @@ const Film = () => {
   };
 
   useLayoutEffect(() => {
-    const max = getMaxTranslate();
-    setTranslateX(-max);
+    if (!filmRef.current) return;
+
+    const observer = new ResizeObserver(() => {
+      const max = getMaxTranslate();
+      setTranslateX(-max);
+    });
+
+    observer.observe(filmRef.current);
+
+    return () => observer.disconnect();
   }, []);
 
   const onMouseDown = (e: React.MouseEvent) => {

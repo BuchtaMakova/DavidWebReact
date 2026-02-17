@@ -13,20 +13,18 @@ function App() {
     setActiveSchool(schoolId);
   };
   return (
-    <main className="main min-h-screen text-textlight max-w-5xl mx-auto">
+    <main className="main min-h-screen text-textlight">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-30">
-        <div className="max-w-5xl mx-auto  py-6 flex items-center justify-between text-sm tracking-widest">
+        <div className="max-w-5xl mx-auto  py-6 flex items-center justify-between tracking-widest">
           <div className="font-semibold">
-            <label>DAVID</label>
-            <label className="text-accent-500">
-              <b>WEB</b>
-            </label>
+            <span>DAVID</span>
+            <span className="text-accent-500 font-bold">WEB</span>
           </div>
           <nav className="space-x-8">
             <a href="#about">ABOUT</a>
-            <a href="#gallery">GALLERY</a>
-            <a href="#work">WORK</a>
+            <a href="#education">EDUCATION</a>
+            <a href="#projects">PROJECTS</a>
             <a href="#contact">CONTACT</a>
           </nav>
         </div>
@@ -35,7 +33,7 @@ function App() {
       {/* Hero */}
       <section className="relative min-h-screen flex items-center">
         {/* Shared container */}
-        <div className="relative w-full">
+        <div className="relative w-full max-w-5xl mx-auto">
           <div className="relative w-full">
             {/* Image */}
             <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] aspect-[3/2] z-1">
@@ -44,47 +42,45 @@ function App() {
                 alt="Portrait"
                 className="object-cover grayscale w-full h-full"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
             </div>
 
             {/* Content */}
             <div className="relative z-10">
-              <h1 className="text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              <h1 className="font-bold leading-tight mb-3">
                 Hello,
                 <br />
                 I’m David Urban
               </h1>
 
-              <p className="max-w-md leading-relaxed text-base">
+              <p className="max-w-md leading-relaxed">
                 I’m a tech enthusiast and musician who loves programming,
-                playing guitar, and exploring creative projects. When I’m not
-                coding or making music, I’m into gaming, scale modeling, and
-                watches. Currently, I’m in L’Aquila for Erasmus, expanding my
-                horizons. Welcome to my space!
+                playing guitar, and exploring creative projects.
               </p>
 
-              <button
-                onClick={() => {
-                  const link = document.createElement("a");
-                  link.href = CV;
-                  link.download = "David_Urban_en_CV.pdf";
-                  link.click();
-                }}
-                className="text-xs mt-6 px-3 py-2 text-white hover:bg-accent-500 transition relative cursor-pointer flex items-center justify-center gap-1"
-              >
-                <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-accent-500" />
-                <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-accent-500" />
-                <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-accent-500" />
-                <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-accent-500" />
+              <div className="flex-row flex gap-3">
+                <button className="text-xs mt-6 px-3 py-2 text-white bg-accent-500 hover:bg-accent-600 transition relative cursor-pointer flex items-center justify-center gap-1">
+                  <span>LET'S TALK</span>
+                </button>
 
-                <span>Download CV</span>
+                <button
+                  onClick={() => {
+                    const link = document.createElement("a");
+                    link.href = CV;
+                    link.download = "David_Urban_en_CV.pdf";
+                    link.click();
+                  }}
+                  className=" text-xs mt-6 px-3 py-2 text-white border hover:bg-neutral-700 border-neutral-700 transition relative cursor-pointer flex items-center justify-center gap-1"
+                >
+                  <span>DOWNLOAD CV</span>
 
-                <img
-                  src={downloadIcon}
-                  alt=""
-                  className="w-[1.5em] h-[1.5em] object-contain"
-                />
-              </button>
+                  <img
+                    src={downloadIcon}
+                    alt=""
+                    className="w-[1.5em] h-[1.5em] object-contain"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -92,25 +88,34 @@ function App() {
 
       {/* Education */}
       <section
-        className=" flex flex-col h-screen z-[10] justify-center items-center overflow-hidden"
-        id="Education"
+        className="flex flex-col relative h-screen z-[10] justify-start items-center overflow-hidden bg-surface-1 py-20"
+        id="education"
       >
-        <div className="flex relative items-center  mx-auto h-3/4 justify-between w-full">
-          <div className="flex h-full w-3/8 items-center">
+        <div className="flex flex-1 max-w-5xl w-full gap-25 min-h-0">
+          {/* Timeline */}
+          <div className="flex flex-1 flex-col p-10 min-h-0 bg-surface-2 items-center justify-center">
             <Timeline updateSchool={handleSchoolState} />
           </div>
-          <div className="flex h-full aspect-square">
+
+          {/* School Details */}
+          <div className="bg-surface-2 flex-1 min-h-0">
             <SchoolDetail schoolId={activeSchool} />
           </div>
         </div>
       </section>
 
       <section
-        id="work"
-        className="relative h-screen  flex items-center justify-center"
+        id="projects"
+        className="relative h-screen flex flex-col items-center justify-start max-w-5xl mx-auto py-15"
       >
-        <div className="relative h-1/2 w-full max-w-6xl mx-auto ">
-          <Film />
+        <h2 className="text-sm tracking-widest text-text-secondary text-center">
+          PROJECTS
+        </h2>
+
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="relative h-3/4 w-full max-w-6xl mx-auto">
+            <Film />
+          </div>
         </div>
       </section>
     </main>

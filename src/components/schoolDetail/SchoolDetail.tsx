@@ -78,7 +78,7 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
   };
 
   return (
-    <div className="bg-background-polaroid min-w-[500px] px-10 pt-10 text-polaroid-text-primary relative">
+    <div className="bg-background-polaroid min-w-[500px] px-10 pt-10 text-polaroid-text-primary relative h-full aspect-[1/1]">
       <div
         ref={scrollRef}
         className="flex flex-col gap-3 overflow-auto content max-h-full scrollbar-hide pb-10"
@@ -93,9 +93,9 @@ const SchoolDetail = ({ schoolId }: activeSchoolProps) => {
         </div>
 
         <div className="flex flex-col gap-1">
-          <span className="text-xl">
+          <h3>
             <b>{school.school}</b>
-          </span>
+          </h3>
           <span className="text-lg">
             <b>{school.years}</b>
           </span>

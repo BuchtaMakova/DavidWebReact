@@ -17,14 +17,8 @@ const Timeline = ({ updateSchool }: Props) => {
 
   return (
     <div className="relative flex flex-col h-full items-center w-full min-w-[290px] ">
-      {/* Corner borders */}
-      <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-neutral-500" />
-      <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-neutral-500" />
-      <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-neutral-500" />
-      <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-neutral-500" />
-
       {/* Base vertical line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] bg-neutral-600" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] bg-neutral-500" />
 
       {/* Active progress line */}
       <div
@@ -44,9 +38,9 @@ const Timeline = ({ updateSchool }: Props) => {
             {/* LEFT SIDE */}
             <div className="w-1/2 pr-10 text-right">
               {isLeft && (
-                <h3 className="text-lg font-semibold text-text-primary">
+                <span className="text-lg font-semibold text-text-primary">
                   {school.type}
-                </h3>
+                </span>
               )}
             </div>
 
@@ -68,9 +62,9 @@ const Timeline = ({ updateSchool }: Props) => {
             {/* RIGHT SIDE */}
             <div className="w-1/2 pl-10 text-left">
               {!isLeft && (
-                <h3 className="text-lg font-semibold text-neutral-200">
+                <span className="text-lg font-semibold text-neutral-200">
                   {school.type}
-                </h3>
+                </span>
               )}
             </div>
           </div>
