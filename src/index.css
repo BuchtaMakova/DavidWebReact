@@ -48,11 +48,13 @@ h1 {
   letter-spacing: -0.02em;
 }
 
-nav {
+nav a {
   font-size: 1rem;
   line-height: 1.25rem;
   font-weight: 300;
   letter-spacing: 0.02em; /* slightly spaced for clarity */
+  color: var(--color-text-primary); /* override generic a color */
+  text-decoration: none;
 }
 
 header .font-semibold {
@@ -65,4 +67,14 @@ header .font-semibold {
 header .font-semibold .text-accent-500 {
   font-weight: 700;
   letter-spacing: 0.05em;
+}
+
+a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-text-primary);
 }

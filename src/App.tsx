@@ -9,10 +9,14 @@ import technologies from "./data/technologies.json";
 import MessageSVG from "./assets/icons/message.svg";
 import LayersSVG from "./assets/icons/code.svg";
 import CodeSVG from "./assets/icons/layers.svg";
+import InstagramSVG from "./assets/icons/instagram.svg";
+import LinkedInSVG from "./assets/icons/linkedin.svg";
 import schools from "./data/schools.json";
 import { Projects } from "./components/projects/Projects";
+import { ContactForm } from "./components/form/ContactForm";
 
 function App() {
+  //school timeline state
   const [activeSchool, setActiveSchool] = useState<number>(1);
   const timelineSchools = schools.map((school) => ({
     id: school.id,
@@ -23,6 +27,15 @@ function App() {
   const handleSchoolState = (schoolId: number) => {
     setActiveSchool(schoolId);
   };
+
+  //hero section
+  const heroHandleScroll = () => {
+    const section = document.getElementById("contact");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <main className="main min-h-screen text-textlight">
       {/* Header */}
@@ -113,7 +126,10 @@ function App() {
               </p>
 
               <div className="flex-row flex gap-3">
-                <button className="text-xs mt-6 px-3 py-2 text-white bg-accent hover:bg-accent-hover transition relative cursor-pointer flex items-center justify-center gap-1">
+                <button
+                  onClick={heroHandleScroll}
+                  className="text-xs mt-6 px-3 py-2 text-white bg-accent hover:bg-accent-hover transition relative cursor-pointer flex items-center justify-center gap-1"
+                >
                   <span>LET'S TALK</span>
                 </button>
 
@@ -248,6 +264,63 @@ function App() {
           <Projects />
         </div>
       </section>
+
+      <section
+        id="contact"
+        className="h-screen relative bg-background-elevated flex items-center"
+      >
+        <div className="max-w-7xl mx-auto flex flex-row justify-between w-full">
+          {/* Left side */}
+          <div className="flex-1 flex flex-col gap-[18px]">
+            <h2 className="text-3xl font-bold">Get In Touch</h2>
+            <p className="w-[485px]">
+              Would you like to work with me or just chat about possible future
+              collaboration? Please feel free to contact me.
+            </p>
+            <div className="space-y-1">
+              <p>npor.Loma 1404</p>
+              <p>74258 Příbor</p>
+              <p>Czechia</p>
+            </div>
+            <div className="space-y-1 flex flex-col ">
+              <a className="w-fit" href="mailto:urban.dav01@gmail.com">
+                urban.dav01@gmail.com
+              </a>
+              <a className="w-fit" href="tel:+420725887292">
+                +420 725 887 292
+              </a>
+            </div>
+            <div className="flex gap-[8px] mt-4">
+              <a
+                href="https://www.instagram.com/durbangrain/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <img src={InstagramSVG} alt="Instagram" className="w-7 h-7" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/david-urban-62b5913a8/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <img src={LinkedInSVG} alt="LinkedIn" className="w-7 h-7" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right side (form) */}
+          <div className="flex-1 flex items-center justify-end">
+            <ContactForm />
+          </div>
+        </div>
+      </section>
+      <footer className="flex justify-center items-center py-6">
+        <p className="text-sm text-text-muted">
+          © 2026 David Urban • Built with ❤️ using Rect and Tailwind CSS
+        </p>
+      </footer>
     </main>
   );
 }
