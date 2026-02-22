@@ -1,4 +1,3 @@
-import React from "react";
 import "./TechStrip.css";
 
 type Technology = {
