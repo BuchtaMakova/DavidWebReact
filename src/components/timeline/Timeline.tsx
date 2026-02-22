@@ -1,72 +1,71 @@
 import { useState } from "react";
-import schools from "../../data/schools.json";
 
 interface Props {
   updateSchool: (schoolState: number) => void;
+  schools: TimelineSchool[];
 }
 
-const Timeline = ({ updateSchool }: Props) => {
+interface TimelineSchool {
+  id: number;
+  years: string;
+}
+
+const Timeline = ({ updateSchool, schools }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleClick = (index: number) => {
-    setActiveIndex(index);
-    updateSchool(index + 1);
+    setActiveIndex(index - 1);
+    updateSchool(index);
   };
 
-  const progressHeight = ((activeIndex + 1) / schools.length) * 100;
+  const progressWidth = ((activeIndex + 1) / schools.length) * 100;
 
   return (
-    <div className="relative flex flex-col h-full items-center w-full min-w-[290px] ">
-      {/* Base vertical line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] bg-neutral-500" />
+    <div className="relative flex flex-row w-full items-center h-32 min-h-[100px]">
+      {/* Base horizontal line */}
+      <div className="absolute top-1/2 left-0 h-[2px] w-full bg-accent-light -translate-y-1/2" />
 
       {/* Active progress line */}
       <div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] bg-accent-500 transition-all duration-500"
-        style={{ height: `${progressHeight}%` }}
+        className="absolute top-1/2 left-0 h-[2px] bg-accent transition-all duration-500 -translate-y-1/2"
+        style={{ width: `${progressWidth}%` }}
       />
 
       {schools.map((school, index) => {
-        const isLeft = index % 2 === 0;
         const isActive = index <= activeIndex;
+        const isSelected = index === activeIndex;
 
         return (
           <div
-            key={school.type}
-            className="relative flex items-center w-full flex-1"
+            key={school.id}
+            className="relative flex-1 flex justify-center items-center"
           >
-            {/* LEFT SIDE */}
-            <div className="w-1/2 pr-10 text-right">
-              {isLeft && (
-                <span className="text-lg font-semibold text-text-primary">
-                  {school.type}
-                </span>
-              )}
-            </div>
+            {/* YEARS */}
+            <span
+              className={`
+    absolute -top-8 text-[20px] font-medium transition-all duration-300
+    ${
+      isSelected
+        ? "opacity-100 translate-y-0 text-text-primary"
+        : "opacity-0 -translate-y-2 pointer-events-none"
+    }
+  `}
+            >
+              {school.years}
+            </span>
 
             {/* CIRCLE */}
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-              <button
-                onClick={() => handleClick(index)}
-                className={`
-                  w-6 h-6 rounded-full border-4 transition-all duration-300 cursor-pointer
-                  ${
-                    isActive
-                      ? "bg-accent-500 border-accent-500"
-                      : "bg-neutral-800 border-neutral-500"
-                  }
-                `}
-              />
-            </div>
-
-            {/* RIGHT SIDE */}
-            <div className="w-1/2 pl-10 text-left">
-              {!isLeft && (
-                <span className="text-lg font-semibold text-neutral-200">
-                  {school.type}
-                </span>
-              )}
-            </div>
+            <button
+              onClick={() => handleClick(school.id)}
+              className={`
+          w-6 h-6 rounded-full border-4 transition-all duration-300 cursor-pointer
+          ${
+            isActive
+              ? "bg-accent border-accent"
+              : "bg-background-light border-accent-light"
+          }
+        `}
+            />
           </div>
         );
       })}

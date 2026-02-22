@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@theme inline {
+  /*BRAND*/
+  --color-primary: #e10600; /* Leica red */
+  --color-secondary: #6e7378;
+
+  /*ACCENT (Brand Red Scale)*/
+  --color-accent-100: #ffe5e5;
+  --color-accent-200: #ffb3b3;
+  --color-accent-300: #ff8080;
+  --color-accent-400: #ff4d4d;
+  --color-accent-500: #e10600;
+  --color-accent-600: #b00400;
+  --color-accent-700: #800300;
+  --color-accent-800: #4d0200;
+  --color-accent-900: #1a0100;
+
+  /*NEUTRAL (UI grayscale)
+     Used for buttons, inputs,
+     icons, disabled, etc.*/
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+
+  /*SURFACE (Layout layers)
+     Used for page structure*/
+  --color-background: #0d0d0d; /* app background */
+  --color-surface-1: #141414; /* sections */
+  --color-surface-2: #1a1a1a; /* cards */
+  --color-surface-3: #222222; /* elevated */
+  --color-surface-4: #2a2a2a; /* modals */
+
+  /* Special */
+  --color-background-polaroid: #fefefe;
+
+  /*TEXT (Semantic)*/
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #b3b3b3;
+  --color-text-muted: #8c8c8c;
+  --color-text-disabled: #666666;
+
+  --color-polaroid-text-primary: #222222;
+  --color-polaroid-text-secondary: #444444;
+
+  /*BORDERS (Semantic)*/
+  --color-border-subtle: #262626;
+  --color-border-default: #333333;
+  --color-border-strong: #444444;
+}

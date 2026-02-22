@@ -7,6 +7,7 @@ interface ModalProps {
   children: ReactNode;
   width?: string; // Tailwind width class or custom size
   height?: string;
+  backgroundColor?: string; // Optional background color for the modal content
 }
 
 const Modal = ({
@@ -15,6 +16,7 @@ const Modal = ({
   children,
   width = "w-1/2",
   height = "h-auto",
+  backgroundColor = "bg-white",
 }: ModalProps) => {
   // Lock body scroll
   useEffect(() => {
@@ -49,7 +51,9 @@ const Modal = ({
       <div className="absolute inset-0 bg-black/60" onClick={onClose} />
 
       {/* Modal content */}
-      <div className={`relative z-10 ${width} ${height} bg-white shadow-xl`}>
+      <div
+        className={`relative z-10 ${width} ${height} ${backgroundColor} shadow-xl`}
+      >
         {children}
       </div>
     </div>,
