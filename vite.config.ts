@@ -12,6 +12,7 @@ export default defineConfig({
       },
     }),
   ],
+  base: "/DavidWebReact/",
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src"),
