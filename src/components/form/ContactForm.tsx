@@ -5,6 +5,7 @@ export const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const [isEmailValid, setIsEmailValid] = useState(true);
 
@@ -13,7 +14,7 @@ export const ContactForm = () => {
     return emailPattern.test(email);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
 
     if (!validateEmail(email)) {
@@ -22,7 +23,20 @@ export const ContactForm = () => {
     }
 
     setIsEmailValid(true);
-    console.log({ name, email, message });
+    setIsSending(true);
+
+    try {
+      await fetch("http://davidweb.runasp.net/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+    } catch (error) {
+      console.error("Error sending contact form:", error);
+    } finally {
+      setIsSending(false);
+      console.log("Form submitted!");
+    }
 
     setName("");
     setEmail("");
@@ -59,9 +73,12 @@ export const ContactForm = () => {
       />
       <button
         type="submit"
-        className="border border-border-subtle px-4 py-2 self-end hover:bg-background-light cursor-pointer"
+        disabled={isSending}
+        className={`border border-border-subtle px-4 py-2 self-end hover:bg-background-light cursor-pointer ${
+          isSending ? "opacity-50 cursor-not-allowed" : ""
+        }`}
       >
-        Send
+        {isSending ? "Sending..." : "Send"}
       </button>
     </form>
   );
