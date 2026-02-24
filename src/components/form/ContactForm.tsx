@@ -26,7 +26,7 @@ export const ContactForm = () => {
     setIsSending(true);
 
     try {
-      await fetch("http://davidweb.runasp.net/api/contact", {
+      await fetch("https://davidweb.runasp.net/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
