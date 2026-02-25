@@ -1,26 +1,35 @@
 [
   {
     "id": 1,
-    "name": "G4G",
-    "thumbnail": "images/projects/g4g/thumbnail/g4gThumbnail.jpg",
+    "name": "DavidWeb",
+    "thumbnail": "images/projects/davidweb/thumbnail/davidwebThumbnail.jpg",
     "images": [
-      "images/projects/g4g/screenshots/g4g1.jpg",
-      "images/projects/g4g/screenshots/g4g2.jpg",
-      "images/projects/g4g/screenshots/g4g3.jpg",
-      "images/projects/g4g/screenshots/g4g4.jpg",
-      "images/projects/g4g/screenshots/g4g5.jpg",
-      "images/projects/g4g/screenshots/g4g6.jpg"
+      "images/projects/davidweb/screenshots/davidweb1.jpg",
+      "images/projects/davidweb/screenshots/davidweb2.jpg",
+      "images/projects/davidweb/screenshots/davidweb3.jpg",
+      "images/projects/davidweb/screenshots/davidweb4.jpg"
     ],
-    "description": "G4G is a web forum designed for gamers to discuss various topics related to gaming. The website offers a platform for gamers to connect, share their experiences, and seek advice from fellow gamers. The forum is organized into different categories based on game genres, platforms, and specific games. Users can create accounts, post topics, reply to threads, and engage in discussions with other members of the community.",
-    "descriptionShort": "G4G is a web forum designed for gamers to discuss various topics related to gaming. The website offers a platform for gamers to connect, share their experiences",
-    "links": [
-      "https://github.com/BuchtaMakova/G4GReact",
-      "https://github.com/BuchtaMakova/G4GBackendV4"
-    ]
+    "description": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer. It features a clean and modern design with smooth animations and transitions. The website is fully responsive and optimized for performance, ensuring a seamless user experience across different devices and screen sizes.",
+    "descriptionShort": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer.",
+    "links": ["https://github.com/BuchtaMakova/DavidWebReact"]
   },
-
   {
     "id": 2,
+    "name": "Kara",
+    "thumbnail": "images/projects/kara/thumbnail/karaThumbnail.jpg",
+    "images": [
+      "images/projects/kara/screenshots/kara1.jpg",
+      "images/projects/kara/screenshots/kara2.jpg",
+      "images/projects/kara/screenshots/kara3.jpg",
+      "images/projects/kara/screenshots/kara4.jpg",
+      "images/projects/kara/screenshots/kara5.jpg"
+    ],
+    "description": "Kara is a website made for my friends birthday. It features series of funny photos, inside jokes and small pranks. The website is designed to be light-hearted and entertaining, with a focus on humor and fun. It includes a set of rewards hidden behind a security question that only the birthday person would know.",
+    "descriptionShort": "Kara is a website made for my friends birthday. It features series of funny photos, inside jokes and small pranks. The website is designed to be light-hearted and entertaining.",
+    "links": ["https://github.com/BuchtaMakova/Kara"]
+  },
+  {
+    "id": 3,
     "name": "PriborApp",
     "thumbnail": "images/projects/priborapp/thumbnail/priborAppThumbnail.jpg",
     "images": [
@@ -46,33 +55,22 @@
   },
 
   {
-    "id": 3,
-    "name": "DavidWeb",
-    "thumbnail": "images/projects/davidweb/thumbnail/davidwebThumbnail.jpg",
-    "images": [
-      "images/projects/davidweb/screenshots/davidweb1.jpg",
-      "images/projects/davidweb/screenshots/davidweb2.jpg",
-      "images/projects/davidweb/screenshots/davidweb3.jpg",
-      "images/projects/davidweb/screenshots/davidweb4.jpg"
-    ],
-    "description": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer. It features a clean and modern design with smooth animations and transitions. The website is fully responsive and optimized for performance, ensuring a seamless user experience across different devices and screen sizes.",
-    "descriptionShort": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer.",
-    "links": ["https://github.com/BuchtaMakova/DavidWebReact"]
-  },
-
-  {
     "id": 4,
-    "name": "Kara",
-    "thumbnail": "images/projects/kara/thumbnail/karaThumbnail.jpg",
+    "name": "G4G",
+    "thumbnail": "images/projects/g4g/thumbnail/g4gThumbnail.jpg",
     "images": [
-      "images/projects/kara/screenshots/kara1.jpg",
-      "images/projects/kara/screenshots/kara2.jpg",
-      "images/projects/kara/screenshots/kara3.jpg",
-      "images/projects/kara/screenshots/kara4.jpg",
-      "images/projects/kara/screenshots/kara5.jpg"
+      "images/projects/g4g/screenshots/g4g1.jpg",
+      "images/projects/g4g/screenshots/g4g2.jpg",
+      "images/projects/g4g/screenshots/g4g3.jpg",
+      "images/projects/g4g/screenshots/g4g4.jpg",
+      "images/projects/g4g/screenshots/g4g5.jpg",
+      "images/projects/g4g/screenshots/g4g6.jpg"
     ],
-    "description": "Kara is a website made for my friends birthday. It features series of funny photos, inside jokes and small pranks. The website is designed to be light-hearted and entertaining, with a focus on humor and fun. It includes a set of rewards hidden behind a security question that only the birthday person would know.",
-    "descriptionShort": "Kara is a website made for my friends birthday. It features series of funny photos, inside jokes and small pranks. The website is designed to be light-hearted and entertaining.",
-    "links": ["https://github.com/BuchtaMakova/Kara"]
+    "description": "G4G is a web forum designed for gamers to discuss various topics related to gaming. The website offers a platform for gamers to connect, share their experiences, and seek advice from fellow gamers. The forum is organized into different categories based on game genres, platforms, and specific games. Users can create accounts, post topics, reply to threads, and engage in discussions with other members of the community.",
+    "descriptionShort": "G4G is a web forum designed for gamers to discuss various topics related to gaming. The website offers a platform for gamers to connect, share their experiences",
+    "links": [
+      "https://github.com/BuchtaMakova/G4GReact",
+      "https://github.com/BuchtaMakova/G4GBackendV4"
+    ]
   }
 ]

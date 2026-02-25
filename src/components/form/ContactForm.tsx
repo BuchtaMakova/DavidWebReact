@@ -44,7 +44,10 @@ export const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-4 w-[485px]">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-4 w-full max-w-[485px]"
+    >
       <input
         type="text"
         placeholder="Your name"

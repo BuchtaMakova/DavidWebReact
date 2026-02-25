@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 import Timeline from "./components/timeline/Timeline";
@@ -36,16 +36,23 @@ function App() {
     }
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (id: string) => {
+    setMenuOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <main className="main min-h-screen text-textlight">
+    <main className="main min-h-screen text-textlight pt-3">
       {/* Header */}
-      <header className="absolute top-0 left-0 w-full z-30">
+      <header className="absolute top-0 left-0 w-full z-30 px-6">
         <div className="max-w-7xl mx-auto  py-6 flex items-center justify-between tracking-widest">
           <div className="font-semibold">
             <span>DAVID</span>
             <span className="text-accent font-bold">WEB</span>
           </div>
-          <nav className="space-x-15">
+          <nav className="hidden md:flex space-x-10">
             <a
               href="#about"
               onClick={(e) => {
@@ -94,16 +101,54 @@ function App() {
               CONTACT
             </a>
           </nav>
+          <div className="md:hidden z-50">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="relative w-8 h-8 flex flex-col justify-center items-center group"
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`absolute h-[2px] w-6 bg-white transition-all duration-300 ${
+                  menuOpen ? "rotate-45" : "-translate-y-2"
+                }`}
+              />
+              <span
+                className={`absolute h-[2px] w-6 bg-white transition-all duration-300 ${
+                  menuOpen ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute h-[2px] w-6 bg-white transition-all duration-300 ${
+                  menuOpen ? "-rotate-45" : "translate-y-2"
+                }`}
+              />
+            </button>
+          </div>
         </div>
       </header>
 
+      {/* Mobile Menu */}
+      <div
+        className={`fixed h-screen w-screen z-20 bg-black/95 flex flex-col items-center justify-center gap-8 text-xl text-white md:hidden ${
+          menuOpen ? "left-[0vw]" : "left-[100vw]"
+        } transition-all duration-300`}
+      >
+        <button onClick={() => handleNavClick("about")}>ABOUT</button>
+        <button onClick={() => handleNavClick("education")}>EDUCATION</button>
+        <button onClick={() => handleNavClick("projects")}>PROJECTS</button>
+        <button onClick={() => handleNavClick("contact")}>CONTACT</button>
+      </div>
+
       {/* Hero */}
-      <section className="relative min-h-screen flex items-center">
+      <section
+        className="relative min-h-screen  flex items-center px-6 py-10"
+        id="hero"
+      >
         {/* Shared container */}
         <div className="relative w-full max-w-7xl mx-auto">
-          <div className="relative w-full">
+          <div className="flex flex-col-reverse gap-10 md:flex-row relative w-full">
             {/* Image */}
-            <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[70%] aspect-[3/2] z-1">
+            <div className="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 md:w-[70%] aspect-3/2 z-1">
               <img
                 src="images/profile.jpg"
                 alt="Portrait"
@@ -140,7 +185,7 @@ function App() {
                     link.download = "David_Urban_en_CV.pdf";
                     link.click();
                   }}
-                  className=" text-xs mt-6 px-3 py-2 text-white border hover:bg-background-light border-background-light transition relative cursor-pointer flex items-center justify-center gap-1"
+                  className=" text-xs mt-6 px-3 py-2 bg-background-base text-white border hover:bg-background-light border-background-light transition relative cursor-pointer flex items-center justify-center gap-1"
                 >
                   <span>DOWNLOAD CV</span>
 
@@ -157,13 +202,16 @@ function App() {
       </section>
 
       {/* Tech Strip */}
-      <section className="bg-background-elevated h-[65px]">
+      <section className="bg-background-elevated h-[65px] px-6">
         <TechStrip technologies={technologies} />
       </section>
 
       {/* About */}
-      <section className="h-screen flex justify-center items-center" id="about">
-        <div className="flex w-7xl mx-auto">
+      <section
+        className="min-h-screen flex justify-center items-center px-6 p-13"
+        id="about"
+      >
+        <div className="flex w-7xl flex-col-reverse md:flex-row mx-auto gap-12">
           <div className="flex-1 flex flex-col gap-5">
             <div className="h-[80px] border-l-2 border-border-light hover:border-accent transition-colors duration-250 flex flex-row">
               <div className="h-full aspect-square flex items-center justify-center">
@@ -230,23 +278,24 @@ function App() {
       </section>
 
       {/* Education */}
-      <section className="h-screen relative" id="education">
+      <section className="min-h-screen relative px-6" id="education">
         {/* Background image */}
         <img
           src={selectedSchool?.image}
           alt={selectedSchool?.alt}
           className="absolute top-0 left-0 h-full w-full object-cover z-0"
+          loading="lazy"
         />
         {/* Overlay */}
         <div className="absolute top-0 left-0 h-full w-full bg-black/70 z-10" />
 
         {/* Text content */}
-        <div className="relative max-w-7xl mx-auto z-20 text-white py-13 flex flex-col justify-between h-full">
+        <div className="relative max-w-7xl mx-auto z-15 text-white py-13 flex flex-col justify-between min-h-screen">
           <div className="flex flex-col gap-4">
             <h2>Education</h2>
-            <div className=" flex flex-col w-fit gap-1">
+            <div className=" flex flex-col gap-1">
               <h3>{selectedSchool?.name}</h3>
-              <p className="w-md">{selectedSchool?.description}</p>
+              <p className="md:w-md">{selectedSchool?.description}</p>
             </div>
           </div>
           <div>
@@ -258,22 +307,25 @@ function App() {
         </div>
       </section>
 
-      <section id="projects" className="h-screen relative flex items-center">
+      <section
+        id="projects"
+        className="min-h-screen relative flex items-center px-6"
+      >
         <div className="max-w-7xl mx-auto">
-          <h2 className="mb-6">My Personal Projects</h2>
+          <h2 className="mb-6">My Projects</h2>
           <Projects />
         </div>
       </section>
 
       <section
         id="contact"
-        className="h-screen relative bg-background-elevated flex items-center"
+        className="min-h-screen relative bg-background-elevated flex items-center px-6 py-10"
       >
-        <div className="max-w-7xl mx-auto flex flex-row justify-between w-full">
+        <div className="max-w-7xl mx-auto flex flex-col gap-10 md:flex-row justify-between items-center w-full">
           {/* Left side */}
           <div className="flex-1 flex flex-col gap-[18px]">
             <h2 className="text-3xl font-bold">Get In Touch</h2>
-            <p className="w-[485px]">
+            <p className="lg:w-[485px]">
               Would you like to work with me or just chat about possible future
               collaboration? Please feel free to contact me.
             </p>
@@ -311,7 +363,7 @@ function App() {
           </div>
 
           {/* Right side (form) */}
-          <div className="flex-1 flex items-center justify-end">
+          <div className="flex-1 flex items-center w-full md:justify-end sm:max-w-[485px]">
             <ContactForm />
           </div>
         </div>
