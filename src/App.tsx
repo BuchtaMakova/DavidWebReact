@@ -44,7 +44,7 @@ function App() {
   };
 
   return (
-    <main className="main min-h-screen text-textlight pt-3">
+    <main className="main min-h-screen text-textlight pt-3 overflow-hidden">
       {/* Header */}
       <header className="absolute top-0 left-0 w-full z-30 px-6">
         <div className="max-w-7xl mx-auto  py-6 flex items-center justify-between tracking-widest">
@@ -369,7 +369,7 @@ function App() {
         </div>
       </section>
       <footer className="flex justify-center items-center py-6">
-        <p className="text-sm text-text-muted">
+        <p className="text-sm text-text-muted text-center">
           © 2026 David Urban • Built with ❤️ using Rect and Tailwind CSS
         </p>
       </footer>

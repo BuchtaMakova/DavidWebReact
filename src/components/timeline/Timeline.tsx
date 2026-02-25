@@ -43,7 +43,7 @@ const Timeline = ({ updateSchool, schools }: Props) => {
             {/* YEARS */}
             <span
               className={`
-    absolute -top-8 text-[20px] font-medium transition-all duration-300
+    absolute -top-8 text-[15px] md:text-[20px] font-medium transition-all duration-300
     ${
       isSelected
         ? "opacity-100 translate-y-0 text-text-primary"
