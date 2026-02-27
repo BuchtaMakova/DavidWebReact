@@ -226,7 +226,7 @@ function App() {
         className="min-h-screen flex justify-center items-center px-6 p-13"
         id="about"
       >
-        <div className="flex w-7xl flex-col-reverse md:flex-row-reverse mx-auto gap-12">
+        <div className="flex w-7xl flex-col md:flex-row-reverse mx-auto gap-12">
           <div className="flex-1">
             <article>
               <h2 className="mb-5">About Me</h2>

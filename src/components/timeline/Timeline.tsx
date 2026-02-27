@@ -56,6 +56,7 @@ const Timeline = ({ updateSchool, schools }: Props) => {
 
             {/* CIRCLE */}
             <button
+              id="buttonTimeline"
               onClick={() => handleClick(school.id)}
               className={`
           w-6 h-6 rounded-full border-4 transition-all duration-300 cursor-pointer
