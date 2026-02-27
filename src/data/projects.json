@@ -6,8 +6,7 @@
     "images": [
       "images/projects/davidweb/screenshots/davidweb1.jpg",
       "images/projects/davidweb/screenshots/davidweb2.jpg",
-      "images/projects/davidweb/screenshots/davidweb3.jpg",
-      "images/projects/davidweb/screenshots/davidweb4.jpg"
+      "images/projects/davidweb/screenshots/davidweb3.jpg"
     ],
     "description": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer. It features a clean and modern design with smooth animations and transitions. The website is fully responsive and optimized for performance, ensuring a seamless user experience across different devices and screen sizes.",
     "descriptionShort": "DavidWeb is my personal portfolio website built using React and TypeScript. The website showcases my skills, projects, and experiences as a web developer.",
