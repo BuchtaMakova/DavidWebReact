@@ -52,6 +52,10 @@ nav a {
   text-decoration: none;
 }
 
+nav a:hover {
+  color: var(--color-text-muted);
+}
+
 header .font-semibold {
   font-size: 0.875rem;
   line-height: 1.2;

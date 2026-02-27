@@ -51,10 +51,21 @@ function App() {
           menuOpen ? "left-[0vw]" : "left-[100vw]"
         } transition-all duration-300`}
       >
-        <button onClick={() => handleNavClick("about")}>ABOUT</button>
-        <button onClick={() => handleNavClick("education")}>EDUCATION</button>
-        <button onClick={() => handleNavClick("projects")}>PROJECTS</button>
-        <button onClick={() => handleNavClick("contact")}>CONTACT</button>
+        <button id="buttonAbout" onClick={() => handleNavClick("about")}>
+          ABOUT
+        </button>
+        <button
+          id="buttonEducation"
+          onClick={() => handleNavClick("education")}
+        >
+          EDUCATION
+        </button>
+        <button id="buttonProjects" onClick={() => handleNavClick("projects")}>
+          PROJECTS
+        </button>
+        <button id="buttonContact" onClick={() => handleNavClick("contact")}>
+          CONTACT
+        </button>
       </div>
 
       {/* Header */}
@@ -62,7 +73,7 @@ function App() {
         <div className="max-w-7xl mx-auto py-6 flex items-center justify-between tracking-widest">
           <div className="font-semibold z-30">
             <span>DAVID</span>
-            <span className="text-accent font-bold">WEB</span>
+            <span className="text-[#fd322a] font-bold">WEB</span>
           </div>
           <nav className="hidden md:flex space-x-10">
             <a
@@ -115,6 +126,7 @@ function App() {
           </nav>
           <div className="md:hidden z-50">
             <button
+              id="buttonHamburger"
               onClick={() => setMenuOpen(!menuOpen)}
               className="relative w-8 h-8 flex flex-col justify-center items-center group"
               aria-label="Toggle menu"
@@ -173,6 +185,7 @@ function App() {
 
               <div className="flex-row flex gap-3">
                 <button
+                  id="buttonLetsTalk"
                   onClick={heroHandleScroll}
                   className="text-xs mt-6 px-3 py-2 text-white bg-accent hover:bg-accent-hover transition relative cursor-pointer flex items-center justify-center gap-1"
                 >
@@ -180,6 +193,7 @@ function App() {
                 </button>
 
                 <button
+                  id="buttonDownlaodCV"
                   onClick={() => {
                     const link = document.createElement("a");
                     link.href = CV;
@@ -212,7 +226,22 @@ function App() {
         className="min-h-screen flex justify-center items-center px-6 p-13"
         id="about"
       >
-        <div className="flex w-7xl flex-col-reverse md:flex-row mx-auto gap-12">
+        <div className="flex w-7xl flex-col-reverse md:flex-row-reverse mx-auto gap-12">
+          <div className="flex-1">
+            <article>
+              <h2 className="mb-5">About Me</h2>
+              <p>
+                I enjoy building web applications that are not only functional,
+                but clean and intuitive to use. For me, development is about
+                structure, clarity, and creating interfaces that feel natural
+                and well thought out. Living and working abroad helped me become
+                adaptable and confident in international environments. Outside
+                of coding, I am passionate about analog photography, music, and
+                historical fencing. Interests that reflect my appreciation for
+                precision, discipline, and continuous improvement.
+              </p>
+            </article>
+          </div>
           <div className="flex-1 flex flex-col gap-5">
             <div className="h-[80px] border-l-2 border-border-light hover:border-accent transition-colors duration-250 flex flex-row">
               <div className="h-full aspect-square flex items-center justify-center">
@@ -259,21 +288,6 @@ function App() {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="flex-1">
-            <article>
-              <h2 className="mb-5">About Me</h2>
-              <p>
-                I enjoy building web applications that are not only functional,
-                but clean and intuitive to use. For me, development is about
-                structure, clarity, and creating interfaces that feel natural
-                and well thought out. Living and working abroad helped me become
-                adaptable and confident in international environments. Outside
-                of coding, I am passionate about analog photography, music, and
-                historical fencing. Interests that reflect my appreciation for
-                precision, discipline, and continuous improvement.
-              </p>
-            </article>
           </div>
         </div>
       </section>

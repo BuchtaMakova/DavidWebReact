@@ -75,6 +75,7 @@ export const ContactForm = () => {
         className="bg-transparent border border-gray-600 focus:border-border-light outline-none py-2 px-3 resize-none h-32"
       />
       <button
+        id="buttonSend"
         type="submit"
         disabled={isSending}
         className={`border border-border-subtle px-4 py-2 self-end hover:bg-background-light cursor-pointer ${
