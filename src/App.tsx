@@ -44,11 +44,23 @@ function App() {
   };
 
   return (
-    <main className="main min-h-screen text-textlight pt-3 overflow-hidden">
+    <main className="main min-h-screen text-textlight overflow-hidden">
+      {/* Mobile Menu */}
+      <div
+        className={`fixed h-screen w-screen z-20 bg-black/95 flex flex-col items-center justify-center gap-8 text-xl text-white md:hidden ${
+          menuOpen ? "left-[0vw]" : "left-[100vw]"
+        } transition-all duration-300`}
+      >
+        <button onClick={() => handleNavClick("about")}>ABOUT</button>
+        <button onClick={() => handleNavClick("education")}>EDUCATION</button>
+        <button onClick={() => handleNavClick("projects")}>PROJECTS</button>
+        <button onClick={() => handleNavClick("contact")}>CONTACT</button>
+      </div>
+
       {/* Header */}
-      <header className="absolute top-0 left-0 w-full z-30 px-6">
-        <div className="max-w-7xl mx-auto  py-6 flex items-center justify-between tracking-widest">
-          <div className="font-semibold">
+      <header className="md:absolute top-0 left-0 w-full z-30 px-6">
+        <div className="max-w-7xl mx-auto py-6 flex items-center justify-between tracking-widest">
+          <div className="font-semibold z-30">
             <span>DAVID</span>
             <span className="text-accent font-bold">WEB</span>
           </div>
@@ -127,21 +139,9 @@ function App() {
         </div>
       </header>
 
-      {/* Mobile Menu */}
-      <div
-        className={`fixed h-screen w-screen z-20 bg-black/95 flex flex-col items-center justify-center gap-8 text-xl text-white md:hidden ${
-          menuOpen ? "left-[0vw]" : "left-[100vw]"
-        } transition-all duration-300`}
-      >
-        <button onClick={() => handleNavClick("about")}>ABOUT</button>
-        <button onClick={() => handleNavClick("education")}>EDUCATION</button>
-        <button onClick={() => handleNavClick("projects")}>PROJECTS</button>
-        <button onClick={() => handleNavClick("contact")}>CONTACT</button>
-      </div>
-
       {/* Hero */}
       <section
-        className="relative min-h-screen  flex items-center px-6 py-10"
+        className="relative min-h-screen  flex items-center px-6 pb-10 md:py-10"
         id="hero"
       >
         {/* Shared container */}
@@ -311,7 +311,7 @@ function App() {
         id="projects"
         className="min-h-screen relative flex items-center px-6"
       >
-        <div className="max-w-7xl mx-auto">
+        <div className="w-full max-w-7xl mx-auto py-10">
           <h2 className="mb-6">My Projects</h2>
           <Projects />
         </div>
@@ -363,7 +363,7 @@ function App() {
           </div>
 
           {/* Right side (form) */}
-          <div className="flex-1 flex items-center w-full md:justify-end sm:max-w-[485px]">
+          <div className="flex-1 flex items-center w-full md:justify-end md:max-w-[485px]">
             <ContactForm />
           </div>
         </div>

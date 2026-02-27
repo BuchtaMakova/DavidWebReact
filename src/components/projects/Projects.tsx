@@ -29,8 +29,16 @@ export const Projects: React.FC = () => {
   // Current project index
   const [currentIndex, setCurrentIndex] = useState(1);
 
-  // Card width + gap (Tailwind gap-6 = 24px)
-  const cardWidth = 485 + 24;
+  // Card width
+  const [cardWidth, setCardWidth] = useState(0);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (cardRef.current) {
+      const width = cardRef.current.offsetWidth;
+      setCardWidth(width);
+    }
+  }, []);
 
   // Handle drag
   const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -52,57 +60,54 @@ export const Projects: React.FC = () => {
     scrollRef.current.scrollLeft = scrollLeft - walk;
   };
 
-  // Update index on scroll
+  //scroll
+  const [isManualScroll, setIsManualScroll] = useState(true);
+
+  const scrollToIndex = (index: number) => {
+    if (!scrollRef.current) return;
+    const gap = 24;
+    const scrollAmount = index * (cardWidth + gap);
+
+    setIsManualScroll(false); // ignore handleScroll updates temporarily
+    setCurrentIndex(index + 1);
+
+    scrollRef.current.scrollTo({ left: scrollAmount, behavior: "smooth" });
+
+    // reset flag after animation (~300ms)
+    setTimeout(() => setIsManualScroll(true), 300);
+  };
+
   const handleScroll = () => {
-    if (!scrollRef.current) return;
-    const scrollPos = scrollRef.current.scrollLeft;
-    const index = Math.round(scrollPos / cardWidth) + 1; // 1-based
-    setCurrentIndex(Math.min(index, projects.length));
+    if (!scrollRef.current || cardWidth === 0 || !isManualScroll) return;
+    const gap = 24;
+    const scrollLeft = scrollRef.current.scrollLeft;
+    const index = Math.round(scrollLeft / (cardWidth + gap)) + 1;
+    setCurrentIndex((prev) => (prev !== index ? index : prev));
   };
-
-  // Scroll left
-  const scrollLeftHandler = () => {
-    if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({
-      left: -cardWidth,
-      behavior: "smooth",
-    });
-  };
-
-  // Scroll right
-  const scrollRightHandler = () => {
-    if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({
-      left: cardWidth,
-      behavior: "smooth",
-    });
-  };
-
-  useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
-  }, []);
 
   return (
-    <div>
-      <div className="flex justify-between mb-3">
+    <>
+      <div className="hidden sm:flex justify-between mb-3  w-full">
         <div>
           {currentIndex}/{projects.length}
         </div>
         <div className="flex flex-row gap-1">
           <button
+            onClick={() => {
+              const nextIndex = Math.max(0, currentIndex - 2);
+              scrollToIndex(nextIndex);
+            }}
             className="text-xs px-2 py-2 text-white bg-text-subtle hover:bg-background-light transition cursor-pointer"
-            onClick={scrollLeftHandler}
           >
             <img src={arrowLeft} alt="Previous" className="w-[16px] h-[16px]" />
           </button>
 
           <button
+            onClick={() => {
+              const nextIndex = Math.min(projects.length - 1, currentIndex);
+              scrollToIndex(nextIndex);
+            }}
             className="text-xs px-2 py-2 text-white bg-text-subtle hover:bg-background-light transition cursor-pointer"
-            onClick={scrollRightHandler}
           >
             <img src={arrowRight} alt="Next" className="w-[16px] h-[16px]" />
           </button>
@@ -111,19 +116,21 @@ export const Projects: React.FC = () => {
 
       <div
         ref={scrollRef}
-        className="flex overflow-x-auto hide-scrollbar gap-6 snap-x snap-mandatory cursor-grab select-none pr-[calc(100%-485px)]"
+        className="flex flex-col sm:flex-row overflow-x-auto hide-scrollbar gap-6 cursor-grab snap-x snap-mandatory select-none sm:pr-[100%]"
         onMouseDown={handleMouseDown}
         onMouseLeave={handleMouseUpOrLeave}
         onMouseUp={handleMouseUpOrLeave}
         onMouseMove={handleMouseMove}
+        onScroll={handleScroll}
       >
-        {projects.map((project) => (
+        {projects.map((project, index) => (
           <div
+            ref={index === 0 ? cardRef : null}
             key={project.id}
-            className="flex-shrink-0 w-[485px] flex flex-col gap-3 snap-start"
+            className="flex-shrink-0 aspect-3/2 w-full sm:w-[485px] flex flex-col gap-3 snap-start"
           >
             <img
-              className="h-[325px] object-cover rounded"
+              className=" object-cover rounded"
               src={project.thumbnail}
               alt={project.name}
               draggable={false}
@@ -140,6 +147,7 @@ export const Projects: React.FC = () => {
           </div>
         ))}
       </div>
+
       {/* Modal */}
       {selectedProject !== null && (
         <Modal
@@ -149,7 +157,7 @@ export const Projects: React.FC = () => {
           onClose={() => setSelectedProject(null)}
           isOpen={true}
         >
-          <div className="relative grid h-full grid-cols-[2fr_1fr] overflow-hidden text-polaroid-text-primary bg-background-polaroid">
+          <div className="relative h-full flex flex-col-reverse md:grid  md:grid-cols-[2fr_1fr] overflow-hidden text-polaroid-text-primary bg-background-polaroid">
             {/* Images */}
             <div
               className={`grid gap-6 overflow-y-auto p-6 ${
@@ -170,7 +178,7 @@ export const Projects: React.FC = () => {
             </div>
 
             {/* Info */}
-            <div className="p-6 overflow-y-auto relative">
+            <div className="p-6 md:overflow-y-auto relative">
               <button
                 className="absolute top-2 right-2 cursor-pointer z-20"
                 onClick={() => setSelectedProject(null)}
@@ -197,6 +205,6 @@ export const Projects: React.FC = () => {
           </div>
         </Modal>
       )}
-    </div>
+    </>
   );
 };
